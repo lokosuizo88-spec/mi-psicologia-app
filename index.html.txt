@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psicología Personal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2C3E50">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Psicología Personal</h1>
+            <nav>
+                <button id="diaryBtn" class="nav-btn active">Diario</button>
+                <button id="trackingBtn" class="nav-btn">Seguimiento</button>
+                <button id="therapyBtn" class="nav-btn">Terapia</button>
+            </nav>
+        </header>
+        
+        <main>
+            <!-- Página de Diario -->
+            <section id="diaryPage" class="page active">
+                <h2>Diario Personal</h2>
+                <textarea id="journalEntry" placeholder="Escribe tus pensamientos aquí..."></textarea>
+                <div class="emotion-selector">
+                    <h3>Selecciona tu estado emocional:</h3>
+                    <div class="emotion-buttons">
+                        <button class="emotion-btn" data-emotion="feliz">😊 Feliz</button>
+                        <button class="emotion-btn" data-emotion="triste">😢 Triste</button>
+                        <button class="emotion-btn" data-emotion="ansioso">😰 Ansioso</button>
+                        <button class="emotion-btn" data-emotion="calmado">😌 Calmado</button>
+                        <button class="emotion-btn" data-emotion="enojado">😠 Enojado</button>
+                        <button class="emotion-btn" data-emotion="motivado">💪 Motivado</button>
+                    </div>
+                </div>
+                <button id="saveJournalBtn" class="save-btn">Guardar Entrada</button>
+                <div id="journalHistory" class="history-container">
+                    <h3>Entradas Recientes:</h3>
+                    <div id="journalEntriesList"></div>
+                </div>
+            </section>
+            
+            <!-- Página de Seguimiento -->
+            <section id="trackingPage" class="page">
+                <h2>Seguimiento Emocional</h2>
+                <div class="mood-tracker">
+                    <h3>Estado de Ánimo Hoy</h3>
+                    <div class="slider-container">
+                        <input type="range" id="moodSlider" min="1" max="10" value="5">
+                        <div class="slider-labels">
+                            <span>1 (Muy mal)</span>
+                            <span>10 (Excelente)</span>
+                        </div>
+                        <div id="moodValue">5 - Neutral</div>
+                    </div>
+                    <button id="saveMoodBtn" class="save-btn">Registrar Estado</button>
+                </div>
+                <div class="chart-container">
+                    <h3>Evolución Emocional</h3>
+                    <canvas id="moodChart"></canvas>
+</div>
+                <div id="statsContainer">
+                    <h3>Estadísticas</h3>
+                    <div id="moodStats"></div>
+                </div>
+            </section>
+            
+            <!-- Página de Terapia -->
+            <section id="therapyPage" class="page">
+                <h2>Terapeuta Virtual</h2>
+                <div class="chat-container">
+                    <div id="therapyChat" class="chat-messages">
+                        <div class="message bot-message">
+                            ¡Hola! Soy tu terapeuta virtual. ¿Cómo te sientes hoy? ¿Quieres contarme algo?
+                        </div>
+                    </div>
+                    <div class="chat-input-container">
+                        <textarea id="therapyInput" placeholder="Escribe aquí tu mensaje..."></textarea>
+                        <button id="sendTherapyBtn" class="send-btn">Enviar</button>
+                    </div>
+                </div>
+                <div class="therapy-tools">
+                    <h3>Herramientas de Terapia</h3>
+                    <button id="breathingBtn" class="tool-btn">Ejercicio Respiratorio</button>
+                    <button id="thoughtRecordBtn" class="tool-btn">Registro de Pensamientos</button>
+                    <button id="gratitudeBtn" class="tool-btn">Gratitud</button>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
+

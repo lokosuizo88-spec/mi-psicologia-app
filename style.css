@@ -1,0 +1,315 @@
+/* Variables de color */
+:root {
+  --primary-color: #2C3E50; /* Azul índigo */
+  --secondary-color: #5E8B7E; /* Verde suave */
+  --accent-color: #F4F1DE; /* Beige cálido */
+  --light-bg: #FFFFFF;
+  --dark-text: #2C3E50;
+  --light-text: #FFFFFF;
+  --border-color: #D6D6D6;
+  --shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--accent-color);
+  color: var(--dark-text);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: var(--light-bg);
+  min-height: 100vh;
+  box-shadow: var(--shadow);
+}
+
+header {
+  background-color: var(--primary-color);
+  color: var(--light-text);
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.nav-btn {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--light-text);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.nav-btn.active {
+  background-color: var(--accent-color);
+  color: var(--dark-text);
+  font-weight: bold;
+}
+
+main {
+  padding: 1rem;
+}
+
+.page {
+  display: none;
+}
+
+.page.active {
+  display: block;
+}
+
+h2 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Estilos para el diario */
+#journalEntry {
+  width: 100%;
+  height: 150px;
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  resize: vertical;
+  font-family: inherit;
+  margin-bottom: 1rem;
+}
+
+.emotion-selector {
+  margin: 1.5rem 0;
+}
+
+.emotion-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.emotion-btn {
+  background-color: var(--accent-color);
+  border: 1px solid var(--border-color);
+  padding: 0.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.emotion-btn:hover {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.emotion-btn.selected {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.save-btn {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin: 1rem 0;
+  width: 100%;
+}
+
+.history-container {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+}
+
+#journalEntriesList {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.journal-entry {
+  background-color: var(--accent-color);
+  padding: 1rem;
+  margin: 0.5rem 0;
+  border-radius: 5px;
+  border-left: 4px solid var(--primary-color);
+}
+
+/* Estilos para el seguimiento emocional */
+.mood-tracker {
+  background-color: var(--accent-color);
+  padding: 1.5rem;
+  border-radius: 5px;
+  margin-bottom: 1.5rem;
+}
+
+.slider-container {
+  margin: 1.5rem 0;
+}
+
+#moodSlider {
+  width: 100%;
+  height: 25px;
+  -webkit-appearance: none;
+  background: linear-gradient(to right, #ff4444, #ffaa44, #ffff44, #aaff44, #44ff44);
+  border-radius: 5px;
+  outline: none;
+}
+
+#moodSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  cursor: pointer;
+}
+
+.slider-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--dark-text);
+}
+
+#moodValue {
+  text-align: center;
+  font-weight: bold;
+  margin: 1rem 0;
+  font-size: 1.2rem;
+}
+
+.chart-container {
+  background-color: var(--accent-color);
+  padding: 1.5rem;
+  border-radius: 5px;
+  margin: 1.5rem 0;
+}
+
+#moodChart {
+  width: 100%;
+  height: 200px;
+}
+
+/* Estilos para la terapia virtual */
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  background-color: var(--accent-color);
+}
+
+.message {
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  max-width: 80%;
+}
+
+.bot-message {
+  background-color: var(--primary-color);
+  color: white;
+  align-self: flex-start;
+  margin-right: auto;
+}
+
+.user-message {
+  background-color: var(--accent-color);
+  color: var(--dark-text);
+  align-self: flex-end;
+  margin-left: auto;
+}
+
+.chat-input-container {
+  display: flex;
+  padding: 0.5rem;
+  background-color: white;
+  border-top: 1px solid var(--border-color);
+}
+
+#therapyInput {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  resize: none;
+  height: 60px;
+}
+
+.send-btn {
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 5px;
+  margin-left: 0.5rem;
+  cursor: pointer;
+}
+
+.therapy-tools {
+  margin-top: 1.5rem;
+}
+
+.tool-btn {
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 5px;
+  margin: 0.5rem 0.5rem 0.5rem 0;
+  cursor: pointer;
+  display: inline-block;
+}
+
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .emotion-buttons {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .chat-container {
+    height: 300px;
+  }
+}
